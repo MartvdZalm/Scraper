@@ -1,0 +1,16 @@
+{
+    "name": "knight/scraper",
+    "description": "Scraper",
+    "type": "library",
+    "license": "MIT license",
+    "authors": [
+        {
+            "name": "Mart van der Zalm"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KnightScraper\\": "src/"
+        }
+    }
+}
