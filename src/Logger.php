@@ -1,4 +1,5 @@
 <?php
+
 namespace KnightScraper;
 
 class Logger
@@ -9,9 +10,9 @@ class Logger
 
 	public function __construct()
 	{
-		$this->errors = array();
+		$this->errors   = array();
 		$this->warnings = array();
-		$this->info = array();
+		$this->info     = array();
 	}
 
 	public function error(string $message): void

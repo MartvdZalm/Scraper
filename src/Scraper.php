@@ -1,4 +1,5 @@
 <?php
+
 namespace KnightScraper;
 
 class Scraper
@@ -9,7 +10,7 @@ class Scraper
 
 	public function __construct(string $url = '')
 	{
-		$this->url = $url;
+		$this->url    = $url;
 		$this->logger = new Logger();
 
 		if (empty($url)) {

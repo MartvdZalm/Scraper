@@ -1,4 +1,5 @@
 <?php
+
 namespace KnightScraper;
 
 class Curl
@@ -21,25 +22,27 @@ class Curl
 	public function url(string $url): void
 	{
 		if ($this->validUrl($url)) {
-			$this->url = $url;
+			$this->url  = $url;
 			$this->curl = new CurlHandle($url);
 		}
 	}
 
 	public function options(string ...$options): void
 	{
-		
+
 	}
 
 	protected function validUrl(): bool
 	{
 		if (is_null($this->url)) {
 			$this->logger->error('URL is null');
+
 			return false;
 		}
 
 		if (!filter_var($this->url, FILTER_VALIDATE_URL)) {
 			$this->logger->error('URL is not valid');
+
 			return false;
 		}
 

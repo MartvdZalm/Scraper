@@ -8,9 +8,16 @@
             "name": "Mart van der Zalm"
         }
     ],
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.10"
+    },
     "autoload": {
         "psr-4": {
             "KnightScraper\\": "src/"
         }
+    },
+    "scripts": {
+        "csfixer:fix": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix",
+        "csfixer:check": "vendor/bin/php-cs-fixer fix --dry-run"
     }
 }
