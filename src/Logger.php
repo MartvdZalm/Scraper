@@ -4,29 +4,23 @@ namespace KnightScraper;
 
 class Logger
 {
-	protected $errors;
-	protected $warnings;
-	protected $info;
-
 	public function __construct()
 	{
-		$this->errors   = array();
-		$this->warnings = array();
-		$this->info     = array();
+
 	}
 
 	public function error(string $message): void
 	{
-		array_push($this->errors, 'Error: '. $message);
+		echo('Error: '. $message .'\n');
 	}
 
 	public function warning(string $message): void
 	{
-		array_push($this->warnings, 'Warning: '. $message);
+		echo('Warning: '. $message .'\n');
 	}
 
 	public function info(string $message): void
 	{
-		array_push($this->info, 'Info: '. $message);
+		echo('Info: '. $message .'\n');
 	}
 }
