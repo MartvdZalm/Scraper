@@ -2,8 +2,8 @@
 
 namespace KnightScraper\Curl;
 
-use KnightScraper\Logger\Logger;
 use CurlHandle;
+use KnightScraper\Logger\Logger;
 
 class Curl
 {
@@ -24,6 +24,13 @@ class Curl
 		$this->close();
 
 		return $this->response;
+	}
+
+	public function addProxy(Proxy $proxy): void
+	{
+		curl_setopt($this->curl, CURLOPT_PROXY, $proxy->getUrl());
+		curl_setopt($this->curl, CURLOPT_PROXYUSERPWD, $proxy->getUsername().':'.$proxy->getPassword());
+		curl_setopt($this->curl, CURLOPT_PROXY_CONNECT_TIMEOUT, $proxy->getTimeout());
 	}
 
 	protected function start(): void
