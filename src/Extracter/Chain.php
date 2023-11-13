@@ -7,7 +7,9 @@ class Chain
 	private array $chain = [];
 	private array $names = [];
 
-	public function __construct() {}
+	public function __construct()
+	{
+	}
 
 	public function getChain(): array
 	{

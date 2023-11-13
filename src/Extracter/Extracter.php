@@ -6,7 +6,9 @@ abstract class Extracter
 {
 	protected bool $required = false;
 
-	public function __construct(protected string $name) {}
+	public function __construct(protected string $name)
+	{
+	}
 
 	public function getName(): string
 	{
