@@ -9,6 +9,6 @@ class Config
 	];
 
 	public const MAPPING = [
-        'buienradar' => 'Buienradar',
-    ];
+		'buienradar' => 'Buienradar',
+	];
 }

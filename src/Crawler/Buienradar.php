@@ -8,7 +8,7 @@ class Buienradar extends Crawler
 
 	protected function parse(string $url, string $content): bool
 	{
-	
+
 		return true;
 	}
 }

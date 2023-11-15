@@ -12,20 +12,22 @@ class Crawler
 	public function __construct()
 	{
 		if ($this::URL !== null) {
-            $this->url = $this::URL;
-            $this->crawl();
-        } else {
-            throw new Exception("URL constant not defined in child class.");
-        }
+			$this->url = $this::URL;
+			$this->crawl();
+		} else {
+			throw new Exception('URL constant not defined in child class.');
+		}
 	}
 
 	protected function crawl(): void
-    {
-        $curl = new Curl($this->url);
-        $content = $curl->run();
+	{
+		$curl    = new Curl($this->url);
+		$content = $curl->run();
 
-        $this->parse($this->url, $content);
-    }
+		$this->parse($this->url, $content);
+	}
 
-	protected function parse(string $url, string $content): bool {}
+	protected function parse(string $url, string $content): bool
+	{
+	}
 }
