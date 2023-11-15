@@ -26,7 +26,7 @@ class Chain
 			}
 
 			$this->names[$name] = true;
-			$this->chain[] = $extracter;
+			$this->chain[]      = $extracter;
 		}
 
 		return $this;
