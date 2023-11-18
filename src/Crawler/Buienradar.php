@@ -11,4 +11,12 @@ class Buienradar extends Crawler
 
 		return true;
 	}
+
+	protected function getRootExtracterChain(): Chain
+	{
+		return (new Chain())
+			->add(
+				
+			);
+	}
 }
