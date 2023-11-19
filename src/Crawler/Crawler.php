@@ -3,14 +3,18 @@
 namespace Scraper\Crawler;
 
 use Scraper\Crawler\Curl\Curl;
+use Scraper\Crawler\Logger\Logger;
 
 class Crawler
 {
 	private Curl $curl;
+	protected Logger $logger;
 	protected string $url;
 
 	public function __construct()
 	{
+		$this->logger = new Logger();
+
 		if ($this::URL !== null) {
 			$this->url = $this::URL;
 			$this->crawl();
@@ -20,7 +24,9 @@ class Crawler
 	}
 
 	protected function crawl(): void
-	{
+	{	
+		$this->logger->info('Crawl Started');
+
 		$curl    = new Curl($this->url);
 		$content = $curl->run();
 
