@@ -35,7 +35,6 @@ class Curl
 
 	protected function start(): void
 	{
-		$this->logger->info('Curl started');
 		$this->response = curl_exec($this->curl);
 
 		if (curl_errno($this->curl)) {
@@ -45,7 +44,6 @@ class Curl
 
 	protected function close(): void
 	{
-		$this->logger->info('Curl closed');
 		curl_close($this->curl);
 	}
 
