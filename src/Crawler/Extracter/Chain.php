@@ -56,6 +56,11 @@ class Chain
 			$name   = $extracter->getName();
 			$result = $extracter->extract($content);
 
+			if ($extracter->getFormat()) {
+				$date = date_create($result);
+				$result = date_format($date, $extracter->getFormat());
+			}
+
 			if ($result === null) {
 				if ($extracter->isRequired()) {
 					echo('Required item ' . $this->namePrefix . $name . ' is missing');
